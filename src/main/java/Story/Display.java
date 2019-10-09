@@ -71,28 +71,19 @@ public class Display {
     }
 
     private void control(){
-        nextButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                group.getChildren().removeAll(personDescription, nextButton);
-                group.getChildren().addAll(faultDesc, forgive, throwApple);
-            }
+        nextButton.setOnAction(event -> {
+            group.getChildren().removeAll(personDescription, nextButton);
+            group.getChildren().addAll(faultDesc, forgive, throwApple);
         });
 
-        forgive.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                choice = true;
-                new Transfer().sendResult(choice);
-                stage.hide();
-            }
+        forgive.setOnAction(event -> {
+            choice = true;
+            new Transfer().sendResult(choice);
+            stage.hide();
         });
-        throwApple.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                stage.hide();
-                new StageOfGame();
-            }
+        throwApple.setOnAction(event -> {
+            stage.hide();
+            new StageOfGame();
         });
 
 
