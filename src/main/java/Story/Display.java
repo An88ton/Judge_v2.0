@@ -69,7 +69,7 @@ public class Display {
         text.setLayoutY(20);
         text.setFont(Font.font("Verdana", 14));
     }
-
+//comment
     private void control(){
         nextButton.setOnAction(event -> {
             group.getChildren().removeAll(personDescription, nextButton);
